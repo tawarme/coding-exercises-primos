@@ -32,9 +32,9 @@ class Solution(object):
                 
         return path
 
-#list2 = link_generator([4,3,1])
-#list1 = link_generator([4,2,1])
-list2 = link_generator([])
-list1 = link_generator([])
+list2 = link_generator([1,3,4])
+list1 = link_generator([1,2,4])
+#list2 = link_generator([])
+#list1 = link_generator([])
 
 link_printer(Solution().mergeTwoLists(list1, list2))
