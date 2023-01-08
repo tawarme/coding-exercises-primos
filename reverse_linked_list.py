@@ -17,18 +17,19 @@ class Solution:
     def reverseList(self, head):
         
         new_head = self.reverser(head, None)
-        link_printer(main_head)
 
         return new_head
 
 def link_generator(lister):
+    if not lister:
+        return None
     prev_node = ListNode(lister[0], None)
     head = None
     for item in lister[1:]:
         head = ListNode(item, prev_node)
         prev_node = head
 
-    print(head.val, head.next.val)
+    #print(head.val, head.next.val)
     return head
 
 def link_printer(head):
