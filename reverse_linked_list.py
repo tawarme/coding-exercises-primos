@@ -12,34 +12,44 @@ class Solution:
         else:
             new_head = head
         head.next = prev
-        print("hi")
+        #print("hi")
 
     def reverseList(self, head):
         
         new_head = self.reverser(head, None)
-        link_printer(main_head)
 
         return new_head
 
+
 def link_generator(lister):
+    if not lister:
+        return None
+
+    # List gets reversed during creation, so we reverse it before
+    lister.reverse()
+
     prev_node = ListNode(lister[0], None)
     head = None
     for item in lister[1:]:
         head = ListNode(item, prev_node)
         prev_node = head
 
-    print(head.val, head.next.val)
+    #print(head.val, head.next.val)
     return head
 
+
 def link_printer(head):
-
+    print("[", end="")
     while head is not None:
-        print(head.val)
+        print(head.val, end=",")
         head = head.next
+    print("]")
 
-# link = link_generator([1,2,3,4,5])
-link = link_generator([5,4,3,2,1])
 
-link_printer(link)
+if __name__ == "__main__":
+    # link = link_generator([1,2,3,4,5])
+    link = link_generator([5,4,3,2,1])
 
-print(Solution().reverseList(link))
+    link_printer(link)
+
+    print(Solution().reverseList(link))
