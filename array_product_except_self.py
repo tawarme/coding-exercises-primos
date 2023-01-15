@@ -1,3 +1,6 @@
+# TODO: REVIEW AND TRANSFORM to space O(1)
+class Solution(object):
+    def productExceptSelf(self, nums):
         answer_l = []
         answer_r = []
         for i in range(len(nums)):
